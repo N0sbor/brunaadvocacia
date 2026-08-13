@@ -812,37 +812,115 @@ h1, h2, h3 {
 /* ─── FOOTER ─────────────────────────────────────────── */
 .site-footer {
   background-color: var(--void);
-  color: rgba(247, 241, 232, 0.6);
-  padding-block: var(--space-xl);
+  color: rgba(247, 241, 232, 0.55);
+  padding-block: 3rem 2rem;
 }
 
-.footer-inner {
+/* Zona principal: 3 colunas desktop, empilhado mobile */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    text-align: left;
+    gap: 3rem;
+  }
+}
+
+/* Coluna 1: marca */
+.footer-brand img {
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .footer-brand img {
+    margin: 0 0 0.75rem;
+  }
+}
+
+.footer-tagline {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--copper-light);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Coluna 2: info */
+.footer-oab {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(247, 241, 232, 0.85);
+  margin-bottom: 0.35rem;
+}
+
+.footer-sub {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: rgba(247, 241, 232, 0.5);
+}
+
+/* Coluna 3: redes */
+.footer-social {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 0.85rem;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .footer-social {
+    align-items: flex-start;
+  }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(247, 241, 232, 0.55);
+  font-size: 0.875rem;
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: var(--copper-light);
+}
+
+.social-link--whatsapp:hover {
+  color: #4ade80;
+}
+
+/* Divisória cobre */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--copper-deep) 30%, var(--copper-light) 50%, var(--copper-deep) 70%, transparent);
+  opacity: 0.3;
+  margin-bottom: 1.5rem;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.45;
+  line-height: 1.6;
   text-align: center;
 }
 
-.footer-info {
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.footer-links a {
-  color: var(--copper-light);
-  font-size: 0.9rem;
-  transition: color var(--transition);
-}
-
-.footer-links a:hover {
-  color: var(--copper);
-}
-
-.footer-copy {
-  font-size: 0.8125rem;
-  opacity: 0.6;
-  line-height: 1.6;
+.footer-disclaimer {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
 }
 
 /* ─── ANIMAÇÕES DE SCROLL ────────────────────────────── */
