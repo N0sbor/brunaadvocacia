@@ -499,55 +499,89 @@
          8. FORMULÁRIO
     ═══════════════════════════════════════════ -->
     <section id="formulario" class="section-formulario" aria-label="Formulário de contato">
-      <div class="container formulario-wrapper">
-        <div class="formulario-header">
-          <p class="section-eyebrow">Primeiro passo, é rápido</p>
-          <h2 class="section-title">Fale agora com a Dra. Bruna</h2>
-          <p class="formulario-sub">
-            Só nome e WhatsApp. O resto a gente conversa pelo chat.
-          </p>
+      <div class="container formulario-grid">
+
+        <!-- Coluna esquerda: contexto e confiança -->
+        <div class="formulario-contexto">
+          <div class="foto-wrapper formulario-foto">
+            <img src="assets/bruna-autoridade.jpg" alt="Dra. Bruna Beloti" width="400" height="480" loading="lazy" class="foto-img" />
+            <div class="foto-overlay" aria-hidden="true">
+              <span class="foto-nome">Dra. Bruna Beloti</span>
+              <span class="foto-oab">OAB/PR 94.474</span>
+            </div>
+          </div>
+          <ul class="formulario-bullets" role="list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              An&aacute;lise gratuita antes de qualquer compromisso
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Atendimento direto, sem secret&aacute;ria ou bot
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Mais de 150 fam&iacute;lias atendidas no Paran&aacute;
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Tudo pelo celular, sem ir ao f&oacute;rum
+            </li>
+          </ul>
         </div>
 
-        <form id="leadForm" class="lead-form" novalidate aria-label="Formulário de captação de lead">
-          <div class="form-group">
-            <label for="nome" class="form-label">Seu nome <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              class="form-input"
-              placeholder="Ex: Maria da Silva"
-              required
-              autocomplete="name"
-              aria-required="true"
-            />
-            <span class="form-error" id="nome-error" role="alert" aria-live="polite"></span>
+        <!-- Coluna direita: formulário -->
+        <div class="formulario-card">
+          <div class="formulario-header">
+            <p class="section-eyebrow">Primeiro passo, &eacute; r&aacute;pido</p>
+            <h2 class="section-title">Fale com a Dra. Bruna</h2>
+            <p class="formulario-sub">
+              Conta sua situa&ccedil;&atilde;o e receba uma avalia&ccedil;&atilde;o gratuita.
+            </p>
           </div>
 
-          <div class="form-group">
-            <label for="whatsapp" class="form-label">WhatsApp <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="tel"
-              id="whatsapp"
-              name="whatsapp"
-              class="form-input"
-              placeholder="(41) 99999-9999"
-              required
-              autocomplete="tel"
-              aria-required="true"
-              inputmode="numeric"
-            />
-            <span class="form-error" id="whatsapp-error" role="alert" aria-live="polite"></span>
-          </div>
+          <form id="leadForm" class="lead-form" novalidate aria-label="Formulário de captação de lead">
+            <div class="form-group">
+              <label for="nome" class="form-label">Seu nome <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                class="form-input"
+                placeholder="Ex: Maria da Silva"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+              <span class="form-error" id="nome-error" role="alert" aria-live="polite"></span>
+            </div>
 
-          <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
-            Falar com a Dra. Bruna no WhatsApp
-          </button>
+            <div class="form-group">
+              <label for="whatsapp" class="form-label">WhatsApp <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                class="form-input"
+                placeholder="(41) 99999-9999"
+                required
+                autocomplete="tel"
+                aria-required="true"
+                inputmode="numeric"
+              />
+              <span class="form-error" id="whatsapp-error" role="alert" aria-live="polite"></span>
+            </div>
 
-          <p class="form-disclaimer">
-            🔒 Seus dados são protegidos. A conversa é direta com a Dra. Bruna, sem intermediários.
-          </p>
-        </form>
+            <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
+              Quero a an&aacute;lise gratuita
+            </button>
+
+            <p class="form-disclaimer">
+              🔒 Conversa direta com a Dra. Bruna, sem intermediários.
+            </p>
+          </form>
+        </div>
+
       </div>
     </section>
 
