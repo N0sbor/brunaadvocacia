@@ -206,8 +206,7 @@ h1, h2, h3 {
 }
 
 .header-logo img {
-  border-radius: 4px;
-  mix-blend-mode: lighten;
+  display: block;
 }
 
 .logo-placeholder {

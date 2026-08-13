@@ -1,14 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" width="200" height="56">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" width="280" height="72">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&amp;family=Public+Sans:wght@400;600&amp;display=swap');
-    </style>
+    <linearGradient id="copper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#D9A57C"/>
+      <stop offset="45%"  stop-color="#B87551"/>
+      <stop offset="100%" stop-color="#8C4F31"/>
+    </linearGradient>
   </defs>
-  <!-- Monograma B -->
-  <text x="0" y="44" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#B87551">B</text>
-  <!-- Linha separadora -->
-  <rect x="38" y="8" width="1.5" height="38" fill="#B87551" opacity="0.4"/>
-  <!-- Nome -->
-  <text x="46" y="26" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#D9A57C" letter-spacing="1">BELOTI</text>
-  <text x="46" y="44" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#F7F1E8" letter-spacing="2.5">ADVOCACIA</text>
+
+  <!-- ── MONOGRAMA (quadrado com B/I entrelaçado) ── -->
+  <!-- Quadrado externo -->
+  <rect x="2" y="4" width="64" height="64" rx="3" ry="3"
+        fill="none" stroke="url(#copper)" stroke-width="2.5"/>
+
+  <!-- Coluna vertical central (I) -->
+  <rect x="31" y="13" width="6" height="46" rx="1" fill="url(#copper)"/>
+
+  <!-- B esquerdo (espelhado) — arco superior -->
+  <path d="M31 13 L18 13 Q10 13 10 22 Q10 31 18 31 L31 31"
+        fill="none" stroke="url(#copper)" stroke-width="4" stroke-linecap="round"/>
+  <!-- B esquerdo — arco inferior -->
+  <path d="M31 31 L16 31 Q8 31 8 41 Q8 52 16 52 L31 52"
+        fill="none" stroke="url(#copper)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- B direito (normal) — arco superior -->
+  <path d="M37 13 L50 13 Q58 13 58 22 Q58 31 50 31 L37 31"
+        fill="none" stroke="url(#copper)" stroke-width="4" stroke-linecap="round"/>
+  <!-- B direito — arco inferior -->
+  <path d="M37 31 L52 31 Q60 31 60 41 Q60 52 52 52 L37 52"
+        fill="none" stroke="url(#copper)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- ── TEXTO: Beloti ── -->
+  <text x="80" y="46"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="38"
+        font-weight="700"
+        font-style="normal"
+        fill="url(#copper)"
+        letter-spacing="-0.5">Beloti</text>
+
+  <!-- ── TEXTO: ADVOCACIA ── -->
+  <text x="82" y="62"
+        font-family="'Public Sans', Arial, sans-serif"
+        font-size="11"
+        font-weight="400"
+        fill="url(#copper)"
+        letter-spacing="4.5"
+        opacity="0.85">ADVOCACIA</text>
 </svg>
