@@ -616,110 +616,132 @@ h1, h2, h3 {
 }
 
 /* ─── OFERTA ─────────────────────────────────────────── */
+/* ─── SEÇÃO OFERTA / RISCO ZERO ─────────────────────── */
 .section-oferta {
-  background-color: var(--ivory-dark);
+  background-color: var(--void);
   padding-block: var(--space-2xl);
 }
 
-.oferta-card {
-  background-color: var(--void);
-  border: 1px solid rgba(184,117,81,0.3);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.5rem, 5vw, 3rem);
+.oferta-header {
   text-align: center;
-  max-width: 720px;
+  max-width: 640px;
   margin-inline: auto;
+  margin-bottom: 3rem;
 }
 
 .oferta-titulo {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   color: var(--ivory);
-  margin-bottom: var(--space-lg);
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-.oferta-valores {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-md);
+.oferta-subtitulo {
+  font-size: 1rem;
+  color: rgba(247, 241, 232, 0.6);
+  line-height: 1.65;
 }
 
-.valor-bloco {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(184,117,81,0.2);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 2rem;
-  min-width: 200px;
+/* 3 pilares */
+.oferta-pilares {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 960px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
 }
 
-.valor-label {
-  font-size: 0.75rem;
-  font-weight: 600;
+@media (min-width: 640px) {
+  .oferta-pilares {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pilar-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(202, 158, 132, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.pilar-card:hover {
+  border-color: rgba(202, 158, 132, 0.45);
+  transform: translateY(-3px);
+}
+
+.pilar-card--destaque {
+  border-color: rgba(202, 158, 132, 0.5);
+  background: rgba(202, 158, 132, 0.07);
+}
+
+.pilar-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--copper-light), var(--copper-deep));
+  color: var(--ivory);
+  font-size: 0.6875rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  padding: 0.25rem 0.85rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.pilar-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(202, 158, 132, 0.12);
+  border: 1px solid rgba(202, 158, 132, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
   color: var(--copper-light);
-  margin-bottom: 0.5rem;
 }
 
-.valor-preco {
+.pilar-titulo {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 1.15rem;
   color: var(--ivory);
-  line-height: 1;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.75rem;
 }
 
-.valor-detalhe {
-  font-size: 0.8125rem;
+.pilar-desc {
+  font-size: 0.875rem;
   color: rgba(247, 241, 232, 0.55);
+  line-height: 1.65;
 }
 
-.valor-separador {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--copper);
-  font-weight: 700;
-}
-
-.oferta-total {
-  font-size: 1rem;
-  color: rgba(247, 241, 232, 0.8);
-  margin-bottom: var(--space-md);
-}
-
-.oferta-total strong {
-  color: var(--ivory);
-}
-
-.oferta-garantias {
+/* Linha de confiança */
+.oferta-confianca {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-align: left;
-  max-width: 380px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.8125rem;
+  color: rgba(247, 241, 232, 0.45);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+.oferta-confianca .sep {
+  opacity: 0.3;
+}
+
+.oferta-cta {
+  display: block;
+  width: fit-content;
   margin-inline: auto;
-  margin-bottom: var(--space-lg);
-}
-
-.oferta-garantias li {
-  font-size: 0.9375rem;
-  color: rgba(247, 241, 232, 0.75);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-@media (min-width: 600px) {
-  .oferta-valores {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-md);
-  }
 }
 
 /* ─── FORMULÁRIO ─────────────────────────────────────── */
@@ -1006,20 +1028,6 @@ h1, h2, h3 {
 }
 
 /* ─── ÂNCORA DE PREÇO ────────────────────────────────── */
-.oferta-ancora {
-  background: rgba(202, 158, 132, 0.1);
-  border: 1px solid rgba(202, 158, 132, 0.25);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
-  font-size: 0.9375rem;
-  color: rgba(247,241,232,0.75);
-  margin-bottom: var(--space-lg);
-  line-height: 1.6;
-}
-
-.oferta-ancora strong {
-  color: var(--ivory);
-}
 
 /* ─── FOOTER SOCIAL ──────────────────────────────────── */
 .footer-social {
