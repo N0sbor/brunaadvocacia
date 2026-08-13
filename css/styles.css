@@ -205,6 +205,11 @@ h1, h2, h3 {
   align-items: center;
 }
 
+.header-logo img {
+  border-radius: 4px;
+  mix-blend-mode: lighten;
+}
+
 .logo-placeholder {
   font-family: var(--font-display);
   font-size: 1.125rem;
