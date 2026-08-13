@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" width="200" height="56">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&amp;family=Public+Sans:wght@400;600&amp;display=swap');
+    </style>
+  </defs>
+  <!-- Monograma B -->
+  <text x="0" y="44" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#B87551">B</text>
+  <!-- Linha separadora -->
+  <rect x="38" y="8" width="1.5" height="38" fill="#B87551" opacity="0.4"/>
+  <!-- Nome -->
+  <text x="46" y="26" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#D9A57C" letter-spacing="1">BELOTI</text>
+  <text x="46" y="44" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#F7F1E8" letter-spacing="2.5">ADVOCACIA</text>
+</svg>
