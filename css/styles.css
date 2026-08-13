@@ -224,7 +224,7 @@ h1, h2, h3 {
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--header-h);
+  height: 76px;
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
     linear-gradient(180deg, #363636 0%, #2a2a2a 50%, #191919 100%);
@@ -863,6 +863,134 @@ h1, h2, h3 {
     transform: none;
     transition: none;
   }
+}
+
+/* ─── FAQ ────────────────────────────────────────────── */
+.section-faq {
+  background-color: var(--ivory);
+  padding-block: var(--space-2xl);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 720px;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid rgba(202, 158, 132, 0.2);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-item[open] {
+  border-color: rgba(202, 158, 132, 0.5);
+}
+
+.faq-pergunta {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  user-select: none;
+}
+
+.faq-pergunta::-webkit-details-marker { display: none; }
+
+.faq-pergunta::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--copper);
+  flex-shrink: 0;
+  transition: transform 250ms ease;
+}
+
+.faq-item[open] .faq-pergunta::after {
+  transform: rotate(45deg);
+}
+
+.faq-resposta {
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  padding: 0 1.25rem 1.1rem;
+}
+
+/* ─── ÂNCORA DE PREÇO ────────────────────────────────── */
+.oferta-ancora {
+  background: rgba(202, 158, 132, 0.1);
+  border: 1px solid rgba(202, 158, 132, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 0.9375rem;
+  color: rgba(247,241,232,0.75);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.oferta-ancora strong {
+  color: var(--ivory);
+}
+
+/* ─── FOOTER SOCIAL ──────────────────────────────────── */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--copper-light);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.social-link:hover {
+  color: var(--copper);
+}
+
+/* ─── BOTÃO FLUTUANTE WHATSAPP ───────────────────────── */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem 0.75rem 1rem;
+  border-radius: 99px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+}
+
+.whatsapp-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+
+@media (min-width: 768px) {
+  .whatsapp-fab span { display: inline; }
 }
 
 /* ─── UTILITÁRIOS ────────────────────────────────────── */
