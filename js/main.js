@@ -19,6 +19,40 @@
       .catch(function () { return '???'; });
   }
 
+  /* ─── CONTADOR ANIMADO NOS NÚMEROS ─────────────────── */
+  function animateCount(el) {
+    var target   = parseInt(el.getAttribute('data-count'), 10);
+    var prefix   = el.getAttribute('data-prefix') || '';
+    var suffix   = el.getAttribute('data-suffix') || '';
+    var duration = 1800;
+    var start    = null;
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      el.textContent = prefix + Math.floor(easeOut(progress) * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var countEls = document.querySelectorAll('[data-count]');
+    var countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(function (el) { countObserver.observe(el); });
+  }
+
   /* ─── ANIMAÇÕES DE SCROLL ──────────────────────────── */
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
