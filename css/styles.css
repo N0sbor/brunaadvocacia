@@ -954,6 +954,7 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 0.75rem;
   max-width: 720px;
+  margin-inline: auto;
 }
 
 .faq-item {
