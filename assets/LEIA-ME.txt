@@ -1,0 +1,16 @@
+ASSETS — BELOTI ADVOCACIA
+=========================
+
+Coloque os arquivos abaixo nesta pasta antes de fazer o deploy:
+
+  logo.png             → Logo da Dra. Bruna Beloti (fundo transparente, ~240×80px)
+  bruna-hero.jpg       → Foto principal para o Hero (~480×560px, JPEG <150KB)
+  bruna-autoridade.jpg → Foto secundária para seção Autoridade (~400×480px, JPEG <150KB)
+  og-bruna.jpg         → Imagem Open Graph para redes sociais (1200×630px, JPEG <200KB)
+  favicon.ico          → Ícone da aba do browser (monograma BI, 32×32px)
+
+Ferramenta gratuita de compressão: https://squoosh.app
+
+IMPORTANTE: Após adicionar as fotos, substitua no index.html:
+  <div class="photo-placeholder"> ... </div>
+pela tag <img> correspondente (ver README.md para o código completo).
