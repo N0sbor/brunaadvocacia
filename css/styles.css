@@ -18,8 +18,8 @@
   --ink-soft:      #5C534A;
 
   /* Tipografia */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body:    'Public Sans', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
 
   /* Espaçamentos */
   --space-xs:  0.5rem;
@@ -124,7 +124,10 @@ h1, h2, h3 {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   color: var(--ink);
   margin-bottom: var(--space-lg);
 }
@@ -1010,7 +1013,7 @@ h1, h2, h3 {
 }
 
 .footer-tagline {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 0.9rem;
   font-style: italic;
   color: var(--copper-light);
