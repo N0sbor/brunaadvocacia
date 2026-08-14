@@ -11,12 +11,19 @@
   var anoEl = document.getElementById('anoAtual');
   if (anoEl) anoEl.textContent = new Date().getFullYear();
 
-  /* ─── CONTADOR SEQUENCIAL DE CLIENTES (servidor) ───── */
+  /* ─── CONTADOR SEQUENCIAL DE CLIENTES (servidor + fallback local) ── */
   function getNextClientNumber() {
     return fetch('contador.php')
-      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (!r.ok) throw new Error('sem PHP');
+        return r.json();
+      })
       .then(function (d) { return d.numero; })
-      .catch(function () { return '???'; });
+      .catch(function () {
+        var count = parseInt(localStorage.getItem('beloti_lead_count') || '0', 10) + 1;
+        localStorage.setItem('beloti_lead_count', count);
+        return String(count).padStart(3, '0');
+      });
   }
 
   /* ─── CONTADOR ANIMADO NOS NÚMEROS ─────────────────── */
