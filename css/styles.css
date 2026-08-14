@@ -1048,7 +1048,7 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -1065,7 +1065,8 @@ h1, h2, h3 {
 /* Coluna 1: marca */
 .footer-brand {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  align-self: start;
 }
 
 @media (min-width: 768px) {
