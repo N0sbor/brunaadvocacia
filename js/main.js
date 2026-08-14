@@ -175,10 +175,11 @@
       return;
     }
 
-    var nome   = getField('nome').value.trim();
-    var wp     = getField('whatsapp').value.trim();
-    var cidade = getField('cidade') ? getField('cidade').value : '';
-    var btn    = document.getElementById('submitBtn');
+    var nome      = getField('nome').value.trim();
+    var wp        = getField('whatsapp').value.trim();
+    var cidadeEl  = getField('cidade');
+    var cidade    = cidadeEl && cidadeEl.options[cidadeEl.selectedIndex] ? cidadeEl.options[cidadeEl.selectedIndex].value : '';
+    var btn       = document.getElementById('submitBtn');
 
     if (btn) { btn.disabled = true; btn.textContent = 'Aguarde...'; }
 
