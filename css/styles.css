@@ -1078,23 +1078,25 @@ h1, h2, h3 {
   padding-block: 2rem;
   margin-bottom: 0;
   background: linear-gradient(
-    135deg,
-    #D9A57C 0%,
-    #B87551 25%,
-    #8C4F31 50%,
-    #B87551 75%,
-    #D9A57C 100%
+    105deg,
+    #B87551 0%,
+    #D9A57C 35%,
+    #fff5ea 48%,
+    #ffffff 50%,
+    #fff5ea 52%,
+    #D9A57C 65%,
+    #B87551 100%
   );
-  background-size: 200% auto;
+  background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: tagline-shimmer 4s linear infinite;
+  animation: tagline-shimmer 3s linear infinite;
 }
 
 @keyframes tagline-shimmer {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  0%   { background-position: 200% center; }
+  100% { background-position: -50% center; }
 }
 
 /* Coluna 2: info */
