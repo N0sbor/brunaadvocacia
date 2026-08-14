@@ -193,4 +193,19 @@
     });
   });
 
+  /* ─── BOTÃO FLUTUANTE WHATSAPP (FAB) ───────────────── */
+  var fab = document.getElementById('whatsappFab');
+  if (fab) {
+    fab.addEventListener('click', function () {
+      getNextClientNumber().then(function (numCliente) {
+        var text =
+          '*Cliente ' + numCliente + ' - Vaga em Creche*\n\n' +
+          'Ola, Dra. Bruna! Vim pelo site e quero saber como garantir a vaga do meu filho na creche municipal.\n\n' +
+          'Aguardo o contato!';
+        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    });
+  }
+
 })();
