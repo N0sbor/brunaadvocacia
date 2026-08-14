@@ -24,10 +24,10 @@
     var target   = parseInt(el.getAttribute('data-count'), 10);
     var prefix   = el.getAttribute('data-prefix') || '';
     var suffix   = el.getAttribute('data-suffix') || '';
-    var duration = 1800;
+    var duration = 3200;
     var start    = null;
 
-    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+    function easeOut(t) { return 1 - Math.pow(1 - t, 5); }
 
     function step(timestamp) {
       if (!start) start = timestamp;
