@@ -98,7 +98,10 @@
   var whatsappInput = document.getElementById('whatsapp');
   if (whatsappInput) {
     whatsappInput.addEventListener('input', function () {
-      var raw = whatsappInput.value.replace(/\D/g, '').slice(0, 11);
+      var raw = whatsappInput.value.replace(/\D/g, '');
+      /* Remove código do país 55 se o usuário digitou +55 ou 55 no início */
+      if (raw.length > 11 && raw.slice(0, 2) === '55') raw = raw.slice(2);
+      raw = raw.slice(0, 11);
       var m = raw;
       if (raw.length > 10)     m = '(' + raw.slice(0,2) + ') ' + raw.slice(2,7) + '-' + raw.slice(7);
       else if (raw.length > 6) m = '(' + raw.slice(0,2) + ') ' + raw.slice(2,6) + '-' + raw.slice(6);
