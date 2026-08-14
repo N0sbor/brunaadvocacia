@@ -189,7 +189,7 @@
         'Ola, Dra. Bruna! Vim pelo site e quero saber como garantir a vaga do meu filho na creche municipal.\n\n' +
         '*Nome:* ' + nome + '\n' +
         '*WhatsApp:* ' + wp + '\n' +
-        '*Municipio:* ' + cidade + '\n\n' +
+        '*Cidade:* ' + cidade + '\n\n' +
         'Aguardo o contato!';
 
       var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
