@@ -665,6 +665,7 @@ h1, h2, h3 {
 .section-como-funciona {
   background-color: var(--void-soft);
   padding-block: var(--space-2xl);
+  text-align: center;
 }
 
 .section-como-funciona .section-eyebrow {
@@ -673,6 +674,10 @@ h1, h2, h3 {
 
 .section-como-funciona .section-title {
   color: var(--ivory);
+}
+
+.section-como-funciona .passos-list {
+  text-align: left;
 }
 
 .passos-list {
