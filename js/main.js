@@ -150,11 +150,19 @@
       valid = false;
     }
 
+    var cidade = getField('cidade') ? getField('cidade').value : '';
+    clearError('cidade');
+    if (!cidade) {
+      showError('cidade', 'Selecione seu município.');
+      valid = false;
+    }
+
     return valid;
   }
 
-  ['nome', 'whatsapp'].forEach(function (id) {
+  ['nome', 'whatsapp', 'cidade'].forEach(function (id) {
     var el = getField(id);
+    if (el) el.addEventListener('change', function () { clearError(id); });
     if (el) el.addEventListener('input', function () { clearError(id); });
   });
 
@@ -167,9 +175,10 @@
       return;
     }
 
-    var nome = getField('nome').value.trim();
-    var wp   = getField('whatsapp').value.trim();
-    var btn  = document.getElementById('submitBtn');
+    var nome   = getField('nome').value.trim();
+    var wp     = getField('whatsapp').value.trim();
+    var cidade = getField('cidade') ? getField('cidade').value : '';
+    var btn    = document.getElementById('submitBtn');
 
     if (btn) { btn.disabled = true; btn.textContent = 'Aguarde...'; }
 
@@ -178,7 +187,8 @@
         '*Cliente ' + numCliente + ' - Vaga em Creche*\n\n' +
         'Ola, Dra. Bruna! Vim pelo site e quero saber como garantir a vaga do meu filho na creche municipal.\n\n' +
         '*Nome:* ' + nome + '\n' +
-        '*WhatsApp:* ' + wp + '\n\n' +
+        '*WhatsApp:* ' + wp + '\n' +
+        '*Municipio:* ' + cidade + '\n\n' +
         'Aguardo o contato!';
 
       var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
