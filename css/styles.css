@@ -1319,7 +1319,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: #25D366;
+  background: var(--copper);
   color: #fff;
   font-family: var(--font-body);
   font-size: 0.9375rem;
@@ -1328,14 +1328,14 @@ h1, h2, h3 {
   border-radius: 99px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 20px rgba(184, 117, 81, 0.4);
   transition: transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
 }
 
 .whatsapp-fab:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+  box-shadow: 0 6px 28px rgba(184, 117, 81, 0.55);
 }
 
 @media (min-width: 768px) {
