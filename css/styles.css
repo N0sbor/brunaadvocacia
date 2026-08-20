@@ -1402,6 +1402,14 @@ h1, h2, h3 {
   box-shadow: 0 6px 32px rgba(37, 211, 102, 0.5);
 }
 
+.cta-whatsapp-disclaimer {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .cta-whatsapp-bullets {
   list-style: none;
   display: flex;

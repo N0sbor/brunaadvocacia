@@ -207,6 +207,23 @@
     });
   });
 
+  /* ─── BOTÃO CTA WHATSAPP PRINCIPAL ─────────────────── */
+  var ctaBtn = document.getElementById('whatsappCtaBtn');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      getNextClientNumber().then(function (numCliente) {
+        var text =
+          '*Cliente ' + numCliente + ' - Vaga em Creche*\n\n' +
+          'Olá, Dra. Bruna! Vim pelo site e quero entender o meu caso sobre a vaga do meu filho na creche municipal.\n\n' +
+          'Aguardo o contato!';
+        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    });
+  }
+
   /* ─── BOTÃO FLUTUANTE WHATSAPP (FAB) ───────────────── */
   var fab = document.getElementById('whatsappFab');
   if (fab) {
