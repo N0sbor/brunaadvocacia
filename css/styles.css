@@ -1319,7 +1319,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--copper);
+  background: #25D366;
   color: #fff;
   font-family: var(--font-body);
   font-size: 0.9375rem;
@@ -1328,14 +1328,87 @@ h1, h2, h3 {
   border-radius: 99px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(184, 117, 81, 0.4);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   transition: transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
 }
 
 .whatsapp-fab:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(184, 117, 81, 0.55);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+
+/* ─── CTA WHATSAPP FINAL ─────────────────────────── */
+.section-cta-whatsapp {
+  background: var(--ivory);
+  padding-block: var(--space-2xl);
+}
+
+.cta-whatsapp-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .cta-whatsapp-inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+  }
+}
+
+.cta-whatsapp-foto {
+  max-width: 340px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  .cta-whatsapp-foto { margin-inline: 0; }
+}
+
+.cta-whatsapp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cta-whatsapp-sub {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.btn-whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #25D366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+  width: fit-content;
+}
+
+.btn-whatsapp-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 32px rgba(37, 211, 102, 0.5);
+}
+
+.cta-whatsapp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
 }
 
 @media (min-width: 768px) {
