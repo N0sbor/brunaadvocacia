@@ -85,7 +85,9 @@
   /* ─── SMOOTH SCROLL ─────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      var target = document.querySelector(link.getAttribute('href'));
+      var href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      var target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
