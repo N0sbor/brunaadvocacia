@@ -115,34 +115,30 @@
 
   /* ─── BOTÃO CTA WHATSAPP PRINCIPAL ─────────────────── */
   var ctaBtn = document.getElementById('whatsappCtaBtn');
-  function openWhatsapp(url) {
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = url;
-    } else {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-  }
-
   if (ctaBtn) {
-    ctaBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var text = 'Olá, Dra. Bruna! Vim pelo site e quero entender o meu caso sobre a vaga do meu filho na creche municipal.';
-      var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+    ctaBtn.addEventListener('click', function () {
       if (typeof fbq === 'function') fbq('track', 'Lead');
-      openWhatsapp(url);
-      // Atualiza contador em background sem bloquear
       getNextClientNumber().catch(function(){});
     });
   }
 
   /* ─── BOTÃO FLUTUANTE WHATSAPP (FAB) ───────────────── */
+  function openWhatsappMobile(url) {
+    var a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
   var fab = document.getElementById('whatsappFab');
   if (fab) {
     fab.addEventListener('click', function () {
       var text = 'Olá, Dra. Bruna! Vim pelo site e quero saber como garantir a vaga do meu filho na creche municipal.';
       var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
-      openWhatsapp(url);
+      openWhatsappMobile(url);
       getNextClientNumber().catch(function(){});
     });
   }
