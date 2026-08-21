@@ -66,26 +66,27 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
+  <!-- Preload LCP image (WebP para browsers modernos) -->
+  <link rel="preload" as="image" href="assets/bruna-hero.webp" type="image/webp" imagesrcset="assets/bruna-hero.webp" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.min.css?v=4" />
 
-  <!-- Meta Pixel (Facebook Pixel) -->
+  <!-- Meta Pixel stub — fbevents.js carregado após page load para não bloquear renderização -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    n.queue=[];}(window,document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2570909270045648');
-    fbq('track', 'PageView');
+    fbq('init','2570909270045648');
+    fbq('track','PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
@@ -100,7 +101,10 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="#hero" class="header-logo" aria-label="Beloti Advocacia, página inicial">
-        <img src="assets/logo.png" alt="Beloti Advocacia" style="width:200px;height:auto;display:block;" />
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp" />
+          <img src="assets/logo.png" alt="Beloti Advocacia" width="200" height="50" style="width:200px;height:auto;display:block;" />
+        </picture>
       </a>
       <a href="#formulario" class="btn btn-primary btn-sm header-cta">
         Falar agora
@@ -137,7 +141,10 @@
 
         <div class="hero-photo">
           <div class="foto-wrapper">
-            <img src="assets/bruna-hero.jpg" alt="Dra. Bruna Beloti, advogada de direito de família em Curitiba" width="480" height="560" class="foto-img" />
+            <picture>
+              <source srcset="assets/bruna-hero.webp" type="image/webp" />
+              <img src="assets/bruna-hero.jpg" alt="Dra. Bruna Beloti, advogada de direito de família em Curitiba" width="480" height="560" class="foto-img" fetchpriority="high" />
+            </picture>
             <div class="foto-overlay" aria-hidden="true">
               <span class="foto-nome">Dra. Bruna Beloti</span>
               <span class="foto-oab">OAB/PR 94.474</span>
@@ -156,7 +163,10 @@
 
         <div class="autoridade-photo">
           <div class="foto-wrapper">
+            <picture>
+            <source srcset="assets/bruna-autoridade.webp" type="image/webp" />
             <img src="assets/bruna-autoridade.jpg" alt="Dra. Bruna Beloti, advogada OAB/PR 94.474, atendimento em todo o Paraná" width="400" height="480" loading="lazy" class="foto-img" />
+          </picture>
             <div class="foto-overlay" aria-hidden="true">
               <span class="foto-nome">Dra. Bruna Beloti</span>
               <span class="foto-oab">OAB/PR 94.474</span>
@@ -379,7 +389,10 @@
     <section id="formulario" class="section-cta-whatsapp" aria-label="Falar no WhatsApp">
       <div class="container cta-whatsapp-inner">
         <div class="foto-wrapper cta-whatsapp-foto">
-          <img src="assets/bruna-autoridade.jpg" alt="Dra. Bruna Beloti, advogada OAB/PR 94.474" width="400" height="480" loading="lazy" class="foto-img" />
+          <picture>
+            <source srcset="assets/bruna-autoridade.webp" type="image/webp" />
+            <img src="assets/bruna-autoridade.jpg" alt="Dra. Bruna Beloti, advogada OAB/PR 94.474" width="400" height="480" loading="lazy" class="foto-img" />
+          </picture>
           <div class="foto-overlay" aria-hidden="true">
             <span class="foto-nome">Dra. Bruna Beloti</span>
             <span class="foto-oab">OAB/PR 94.474</span>
@@ -465,7 +478,17 @@
   </button>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=5"></script>
+  <script src="js/main.js?v=5" defer></script>
+
+  <!-- Carrega fbevents.js após o page load para não bloquear LCP -->
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(s);
+    });
+  </script>
 
 </body>
 </html>

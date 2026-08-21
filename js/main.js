@@ -115,18 +115,24 @@
 
   /* ─── BOTÃO CTA WHATSAPP PRINCIPAL ─────────────────── */
   var ctaBtn = document.getElementById('whatsappCtaBtn');
+  function openWhatsapp(url) {
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = url;
+    } else {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  }
+
   if (ctaBtn) {
     ctaBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      getNextClientNumber().then(function (numCliente) {
-        var text =
-          '*Cliente ' + numCliente + ' - Vaga em Creche*\n\n' +
-          'Olá, Dra. Bruna! Vim pelo site e quero entender o meu caso sobre a vaga do meu filho na creche municipal.\n\n' +
-          'Aguardo o contato!';
-        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
-        if (typeof fbq === 'function') fbq('track', 'Lead');
-        window.open(url, '_blank', 'noopener,noreferrer');
-      });
+      var text = 'Olá, Dra. Bruna! Vim pelo site e quero entender o meu caso sobre a vaga do meu filho na creche municipal.';
+      var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+      openWhatsapp(url);
+      // Atualiza contador em background sem bloquear
+      getNextClientNumber().catch(function(){});
     });
   }
 
@@ -134,14 +140,10 @@
   var fab = document.getElementById('whatsappFab');
   if (fab) {
     fab.addEventListener('click', function () {
-      getNextClientNumber().then(function (numCliente) {
-        var text =
-          '*Cliente ' + numCliente + ' - Vaga em Creche*\n\n' +
-          'Ola, Dra. Bruna! Vim pelo site e quero saber como garantir a vaga do meu filho na creche municipal.\n\n' +
-          'Aguardo o contato!';
-        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
-        window.open(url, '_blank', 'noopener,noreferrer');
-      });
+      var text = 'Olá, Dra. Bruna! Vim pelo site e quero saber como garantir a vaga do meu filho na creche municipal.';
+      var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+      openWhatsapp(url);
+      getNextClientNumber().catch(function(){});
     });
   }
 
